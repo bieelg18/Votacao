@@ -32,6 +32,9 @@ public class Usuario {
     @Column(nullable = false)
     private Permissao permissao;
 
+    @Column(name = "email_verificado", nullable = false)
+    private boolean emailVerificado = false;
+
     @OneToOne(mappedBy = "usuario")
     private Votacao votacao;
 
