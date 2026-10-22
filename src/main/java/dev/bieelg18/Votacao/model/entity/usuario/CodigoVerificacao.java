@@ -33,4 +33,7 @@ public class CodigoVerificacao {
     @Column(nullable = false)
     private Integer tentativas = 0;
 
+    @Column(name = "ultimo_envio")
+    private LocalDateTime ultimoEnvio;
+
 }
