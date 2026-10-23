@@ -23,4 +23,6 @@ public interface VotacaoRepository extends JpaRepository<Votacao, Integer> {
         """)
     List<ListarVotacaoDTO> rankingVotacao();
 
+    boolean existsByParticipanteId(Integer participanteId);
+
 }
