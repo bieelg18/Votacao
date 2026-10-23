@@ -25,4 +25,8 @@ public interface VotacaoRepository extends JpaRepository<Votacao, Integer> {
 
     boolean existsByParticipanteId(Integer participanteId);
 
+    boolean existsByUsuarioId(Integer usuarioId);
+
+    void deleteByUsuarioId(Integer usuarioId);
+
 }
