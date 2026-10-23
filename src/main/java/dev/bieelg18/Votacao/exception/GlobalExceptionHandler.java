@@ -2,6 +2,7 @@ package dev.bieelg18.Votacao.exception;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
@@ -56,12 +57,12 @@ public class GlobalExceptionHandler {
                 .body(e.getMessage());
     }
 
-    @ExceptionHandler(ContaNaoEncontradaException.class)
-    public ResponseEntity<String> tratarContaNaoEncontrada(
-            ContaNaoEncontradaException e
+    @ExceptionHandler(BadCredentialsException.class)
+    public ResponseEntity<String> tratarCredenciaisInvalidas(
+            BadCredentialsException e
     ){
         return ResponseEntity.status(HttpStatus.UNAUTHORIZED)
-                .body(e.getMessage());
+                .body("E-mail e/ou senha inválidos");
     }
 
     @ExceptionHandler(ParticipanteComVotosException.class)
