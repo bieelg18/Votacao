@@ -9,4 +9,6 @@ public interface CodigoVerificacaoRepository extends JpaRepository<CodigoVerific
 
     Optional<CodigoVerificacao> findByUsuarioId(Integer usuarioId);
 
+    void deleteByUsuarioId(Integer usuarioId);
+
 }
