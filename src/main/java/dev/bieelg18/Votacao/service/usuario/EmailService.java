@@ -13,20 +13,20 @@ public class EmailService {
 
     private final RestClient restClient;
 
-    public EmailService(
-            RestClient.Builder builder,
-            @Value("${RESEND_API_KEY}") String apiKey) {
 
-        this.restClient = builder
+    public EmailService(@Value("${RESEND_API_KEY}") String apiKey) {
+
+        this.restClient = RestClient.builder()
                 .baseUrl("https://api.resend.com")
                 .defaultHeader("Authorization", "Bearer " + apiKey)
                 .build();
     }
 
+
     public void enviarCodigoVerificacao(String destinatario, String codigo) {
 
         Map<String, Object> email = Map.of(
-                "from", "Halloween do Waltão <onboarding@resend.dev>",
+                "from", "Halloween do Waltão <verificacao@halloweenwaltao.com.br>",
                 "to", new String[]{destinatario},
                 "subject", "Código de verificação - Halloween do Waltão",
                 "text", "Seu código de verificação é: " + codigo
