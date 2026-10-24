@@ -1,30 +1,44 @@
+
 package dev.bieelg18.Votacao.service.usuario;
 
-import lombok.RequiredArgsConstructor;
-import org.springframework.mail.SimpleMailMessage;
-import org.springframework.mail.javamail.JavaMailSender;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.http.MediaType;
 import org.springframework.stereotype.Service;
+import org.springframework.web.client.RestClient;
+
+import java.util.Map;
 
 @Service
-@RequiredArgsConstructor
 public class EmailService {
 
-    private final JavaMailSender mailSender;
+    private final RestClient restClient;
 
+    public EmailService(
+            RestClient.Builder builder,
+            @Value("${RESEND_API_KEY}") String apiKey) {
 
-    public void enviarCodigoVerificacao(String destinatario, String codigo){
-
-        SimpleMailMessage mensagem = new SimpleMailMessage();
-
-        mensagem.setTo(destinatario);
-        mensagem.setSubject("Código de verificação - Halloween do Waltão");
-        mensagem.setText(
-                "Seu código de verificação é: " + codigo +
-                        "\n\nEste código expira em 10 minutos."
-        );
-
-        mailSender.send(mensagem);
-
+        this.restClient = builder
+                .baseUrl("https://api.resend.com")
+                .defaultHeader("Authorization", "Bearer " + apiKey)
+                .build();
     }
 
+    public void enviarCodigoVerificacao(String destinatario, String codigo) {
+
+        Map<String, Object> email = Map.of(
+                "from", "Halloween do Waltão <onboarding@resend.dev>",
+                "to", new String[]{destinatario},
+                "subject", "Código de verificação - Halloween do Waltão",
+                "text", "Seu código de verificação é: " + codigo
+                        + "\n\nEste código expira em 10 minutos."
+        );
+
+        restClient.post()
+                .uri("/emails")
+                .contentType(MediaType.APPLICATION_JSON)
+                .body(email)
+                .retrieve()
+                .toBodilessEntity();
+    }
 }
+
