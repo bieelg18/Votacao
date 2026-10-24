@@ -1,0 +1,294 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#0d0b13">
+
+    <title>Halloween do Waltão | Editar participantes</title>
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link
+            href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&display=swap"
+            rel="stylesheet">
+
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/editar-participante.css">
+
+    <script src="/js/editar-participante.js" defer></script>
+</head>
+
+<body>
+
+<main class="pagina pagina-editar-participante">
+    <div class="conteudo">
+
+        <!-- NAVEGAÇÃO -->
+        <nav class="navegacao-editar">
+            <a href="/painel-admin.html"
+               class="botao-voltar-editar">
+                <span>←</span> Voltar
+            </a>
+
+            <span class="marca-editar">
+                🛡️ ADMIN
+            </span>
+        </nav>
+
+        <!-- CONTEÚDO ADMINISTRATIVO -->
+        <div id="conteudo-editar" hidden>
+
+            <header class="cabecalho-editar">
+                <div class="icone-editar">✏️</div>
+
+                <p class="subtitulo">
+                    GERENCIAMENTO DA FESTA
+                </p>
+
+                <h1>
+                    Hora de dar uma
+                    <span>repaginada!</span>
+                </h1>
+
+                <p>
+                    Selecione um participante para
+                    atualizar os dados da fantasia.
+                </p>
+            </header>
+
+            <section class="card-editar">
+
+                <div class="card-editar-cabecalho">
+                    <p class="etiqueta">
+                        <span class="ponto"></span>
+                        ÁREA ADMINISTRATIVA
+                    </p>
+
+                    <h2>
+                        Editar participantes<span>.</span>
+                    </h2>
+
+                    <p>
+                        Escolha quem você deseja editar.
+                    </p>
+                </div>
+
+                <p id="contador-participantes"
+                   class="contador-editar">
+                    Carregando participantes...
+                </p>
+
+                <!-- LISTA -->
+                <div id="lista-participantes-editar"
+                     class="lista-participantes-editar">
+                </div>
+
+                <!-- NENHUM PARTICIPANTE -->
+                <div id="participantes-vazio"
+                     class="participantes-vazio"
+                     hidden>
+
+                    <div class="icone-vazio">🕸️</div>
+
+                    <h3>
+                        Ninguém por aqui ainda!
+                    </h3>
+
+                    <p>
+                        Nenhum participante foi cadastrado.
+                        Que tal começar a disputa?
+                    </p>
+
+                    <a href="/cadastrar-participante.html"
+                       class="botao-entrar link-cadastrar">
+                        Cadastrar participante →
+                    </a>
+                </div>
+
+                <div class="aviso-editar">
+                    <span>👻</span>
+
+                    <p>
+                        Toque em um participante para
+                        <strong>editar nome, fantasia ou imagem</strong>.
+                    </p>
+                </div>
+
+            </section>
+        </div>
+
+        <!-- ACESSO NEGADO -->
+        <section id="acesso-negado-editar"
+                 class="estado-editar"
+                 hidden>
+
+            <div class="icone-editar">👻</div>
+
+            <p class="subtitulo">
+                OPA, TEM ALGUÉM TENTANDO ENTRAR...
+            </p>
+
+            <h2>Espertinho<span>!</span></h2>
+
+            <h3 id="titulo-acesso-negado">
+                Você não está logado! KKKKK
+            </h3>
+
+            <p id="texto-acesso-negado">
+                Faça login primeiro para acessar
+                essa área da festa!
+            </p>
+
+            <a id="link-acesso-negado"
+               href="/index.html"
+               class="botao-entrar link-estado-editar">
+                Fazer login →
+            </a>
+        </section>
+
+        <!-- ERRO -->
+        <section id="erro-editar"
+                 class="estado-editar"
+                 hidden>
+
+            <div class="icone-editar">🕸️</div>
+
+            <h2>Ops<span>!</span></h2>
+
+            <p>
+                Não conseguimos carregar os participantes.
+                Tente novamente.
+            </p>
+
+            <button type="button"
+                    id="tentar-novamente-editar"
+                    class="botao-entrar">
+                Tentar novamente →
+            </button>
+        </section>
+
+        <!-- RODAPÉ -->
+        <footer class="rodape">
+            <span>✦</span>
+            <p>
+                31 DE OUTUBRO • HALLOWEEN DO WALTÃO
+            </p>
+        </footer>
+
+    </div>
+</main>
+
+<!-- MODAL DE EDIÇÃO -->
+<div id="modal-editar"
+     class="modal-editar"
+     hidden>
+
+    <div class="modal-editar-fundo"
+         id="fundo-modal-editar">
+    </div>
+
+    <section class="modal-editar-conteudo"
+             role="dialog"
+             aria-modal="true"
+             aria-labelledby="titulo-modal-editar">
+
+        <button type="button"
+                id="fechar-modal-editar"
+                class="fechar-modal-editar"
+                aria-label="Fechar edição">
+            ✕
+        </button>
+
+        <div class="modal-editar-icone">✏️</div>
+
+        <p class="subtitulo">
+            ATUALIZANDO A FANTASIA
+        </p>
+
+        <h2 id="titulo-modal-editar">
+            Hora de editar<span>!</span>
+        </h2>
+
+        <p class="modal-editar-descricao">
+            Altere os dados e salve as mudanças.
+        </p>
+
+        <form id="form-editar-participante" novalidate>
+
+            <div class="campo-editar">
+                <label for="editar-nome">
+                    NOME DO PARTICIPANTE
+                </label>
+
+                <input type="text"
+                       id="editar-nome"
+                       maxlength="120"
+                       placeholder="Nome do participante"
+                       required>
+            </div>
+
+            <div class="campo-editar">
+                <label for="editar-fantasia">
+                    FANTASIA
+                </label>
+
+                <input type="text"
+                       id="editar-fantasia"
+                       maxlength="120"
+                       placeholder="Nome da fantasia"
+                       required>
+            </div>
+
+            <div class="campo-editar">
+                <label for="editar-imagem">
+                    URL DA IMAGEM
+                </label>
+
+                <input type="url"
+                       id="editar-imagem"
+                       placeholder="https://exemplo.com/imagem.jpg"
+                       required>
+            </div>
+
+            <!-- PRÉVIA -->
+            <div id="preview-imagem-editar"
+                 class="preview-imagem-editar"
+                 hidden>
+
+                <img id="imagem-preview-editar"
+                     alt="Prévia da fantasia">
+            </div>
+
+            <p id="mensagem-editar"
+               class="mensagem-editar"
+               role="alert"
+               aria-live="polite"
+               hidden>
+            </p>
+
+            <button type="submit"
+                    id="salvar-edicao"
+                    class="botao-entrar botao-salvar-edicao">
+                Salvar alterações →
+            </button>
+
+            <button type="button"
+                    id="cancelar-edicao"
+                    class="botao-cancelar-edicao">
+                Cancelar
+            </button>
+
+        </form>
+    </section>
+</div>
+
+</body>
+</html>

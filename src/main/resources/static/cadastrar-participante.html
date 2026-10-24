@@ -1,0 +1,229 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#0d0b13">
+
+    <title>Halloween do Waltão | Cadastrar participante</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link
+            href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&display=swap"
+            rel="stylesheet">
+
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/cadastrar-participante.css">
+
+    <script src="/js/cadastrar-participante.js" defer></script>
+</head>
+
+<body>
+
+<main class="pagina pagina-cadastrar-participante">
+    <div class="conteudo">
+
+        <!-- NAVEGAÇÃO -->
+        <nav class="navegacao-cadastro-participante">
+            <a href="/painel-admin.html" class="botao-voltar-cadastro">
+                <span>←</span> Voltar
+            </a>
+
+            <span class="marca-cadastro-participante">
+                🛡️ ADMIN
+            </span>
+        </nav>
+
+        <!-- CONTEÚDO ADMINISTRATIVO -->
+        <div id="conteudo-cadastro-participante" hidden>
+
+            <header class="cabecalho-cadastro-participante">
+                <div class="icone-cadastro-participante">🎭</div>
+
+                <p class="subtitulo">PREPARANDO A FESTA</p>
+
+                <h1>
+                    Novos <span>participantes.</span>
+                </h1>
+
+                <p>
+                    Bora descobrir quem vai entrar na disputa
+                    pela melhor fantasia?
+                </p>
+            </header>
+
+            <section class="card-cadastro-participante">
+
+                <div class="card-cadastro-cabecalho">
+                    <p class="etiqueta">
+                        <span class="ponto"></span>
+                        PAINEL ADMINISTRATIVO
+                    </p>
+
+                    <h2>Cadastrar participante<span>.</span></h2>
+
+                    <p>
+                        Preencha os dados para adicionar
+                        alguém à votação.
+                    </p>
+                </div>
+
+                <form id="form-cadastrar-participante" novalidate>
+
+                    <div class="campo-cadastro-participante">
+                        <label for="nome-participante">
+                            Nome do participante
+                        </label>
+
+                        <input
+                                type="text"
+                                id="nome-participante"
+                                name="nome"
+                                placeholder="Ex.: Gabriel Alves"
+                                maxlength="120"
+                                autocomplete="off"
+                                required>
+                    </div>
+
+                    <div class="campo-cadastro-participante">
+                        <label for="fantasia-participante">
+                            Nome da fantasia
+                        </label>
+
+                        <input
+                                type="text"
+                                id="fantasia-participante"
+                                name="fantasia"
+                                placeholder="Ex.: O Máskara"
+                                maxlength="120"
+                                autocomplete="off"
+                                required>
+                    </div>
+
+                    <div class="campo-cadastro-participante">
+                        <label for="imagem-participante">
+                            URL da imagem da fantasia
+                        </label>
+
+                        <input
+                                type="url"
+                                id="imagem-participante"
+                                name="url_imagem_fantasia"
+                                placeholder="https://exemplo.com/foto.jpg"
+                                autocomplete="off"
+                                required>
+
+                        <small>
+                            Cole um link público e direto para a imagem.
+                        </small>
+                    </div>
+
+                    <!-- PRÉVIA DA IMAGEM -->
+                    <div id="previa-imagem"
+                         class="previa-imagem"
+                         hidden>
+
+                        <p>PRÉVIA DA FANTASIA</p>
+
+                        <div class="previa-imagem-container">
+                            <img
+                                    id="imagem-preview"
+                                    alt="Prévia da fantasia cadastrada">
+
+                            <div id="erro-imagem"
+                                 class="erro-imagem"
+                                 hidden>
+                                🕸️ Não foi possível carregar esta imagem.
+                                Confira o link.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- MENSAGENS -->
+                    <p id="mensagem-cadastro"
+                       class="mensagem-cadastro"
+                       role="status"
+                       aria-live="polite"
+                       hidden>
+                    </p>
+
+                    <button
+                            type="submit"
+                            id="botao-cadastrar-participante"
+                            class="botao-entrar botao-salvar-participante">
+                        Cadastrar participante →
+                    </button>
+
+                </form>
+
+                <div class="aviso-cadastro-participante">
+                    <span>👻</span>
+                    <p>
+                        O participante cadastrado aparecerá
+                        na tela de votação para os convidados.
+                    </p>
+                </div>
+
+            </section>
+        </div>
+
+        <!-- ACESSO NEGADO -->
+        <section id="acesso-negado-cadastro"
+                 class="estado-cadastro-participante"
+                 hidden>
+
+            <div class="icone-cadastro-participante">👻</div>
+
+            <p class="subtitulo">ÁREA RESTRITA</p>
+
+            <h2>Espertinho<span>!</span></h2>
+
+            <p>
+                Você precisa ser administrador para
+                cadastrar participantes! KKKKK
+            </p>
+
+            <a href="/principal.html"
+               class="botao-entrar link-voltar-cadastro">
+                Voltar para a festa →
+            </a>
+        </section>
+
+        <!-- ERRO DE CONEXÃO -->
+        <section id="erro-pagina-cadastro"
+                 class="estado-cadastro-participante"
+                 hidden>
+
+            <div class="icone-cadastro-participante">🕸️</div>
+
+            <h2>Ops<span>!</span></h2>
+
+            <p>
+                Não conseguimos verificar suas permissões.
+                Tente novamente.
+            </p>
+
+            <button
+                    type="button"
+                    id="tentar-novamente-cadastro"
+                    class="botao-entrar">
+                Tentar novamente →
+            </button>
+        </section>
+
+        <footer class="rodape">
+            <span>✦</span>
+            <p>31 DE OUTUBRO • HALLOWEEN DO WALTÃO</p>
+        </footer>
+
+    </div>
+</main>
+
+</body>
+</html>

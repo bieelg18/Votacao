@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <meta name="theme-color" content="#0d0b13">
+
+    <title>Halloween do Waltão | Excluir participantes</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link
+            href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&display=swap"
+            rel="stylesheet">
+
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/excluir-participante.css">
+
+    <script src="/js/excluir-participante.js" defer></script>
+</head>
+
+<body>
+
+<main class="pagina pagina-excluir-participante">
+    <div class="conteudo">
+
+        <!-- NAVEGAÇÃO -->
+        <nav class="navegacao-excluir">
+
+            <a href="/painel-admin.html"
+               class="botao-voltar-excluir">
+                <span>←</span> Voltar
+            </a>
+
+            <span class="marca-excluir">
+                🛡️ ADMIN
+            </span>
+
+        </nav>
+
+        <!-- CONTEÚDO ADMINISTRATIVO -->
+        <div id="conteudo-excluir" hidden>
+
+            <header class="cabecalho-excluir">
+
+                <div class="icone-excluir">🗑️</div>
+
+                <p class="subtitulo">
+                    GERENCIAMENTO DA FESTA
+                </p>
+
+                <h1>
+                    Hora de fazer uma
+                    <span>limpeza!</span>
+                </h1>
+
+                <p>
+                    Selecione o participante que deseja
+                    remover da competição.
+                </p>
+
+            </header>
+
+            <section class="card-excluir">
+
+                <div class="card-excluir-cabecalho">
+
+                    <p class="etiqueta">
+                        <span class="ponto"></span>
+                        ÁREA ADMINISTRATIVA
+                    </p>
+
+                    <h2>
+                        Excluir participantes<span>.</span>
+                    </h2>
+
+                    <p>
+                        Escolha quem você deseja remover.
+                    </p>
+
+                </div>
+
+                <p id="contador-participantes-excluir"
+                   class="contador-excluir">
+                    Carregando participantes...
+                </p>
+
+                <!-- LISTA -->
+                <div id="lista-participantes-excluir"
+                     class="lista-participantes-excluir">
+                </div>
+
+                <!-- NENHUM PARTICIPANTE -->
+                <div id="participantes-vazio-excluir"
+                     class="participantes-vazio-excluir"
+                     hidden>
+
+                    <div class="icone-vazio-excluir">🕸️</div>
+
+                    <h3>
+                        Nada para excluir!
+                    </h3>
+
+                    <p>
+                        Ainda não existem participantes
+                        cadastrados na competição.
+                    </p>
+
+                    <a href="/cadastrar-participante.html"
+                       class="botao-entrar link-cadastrar-excluir">
+                        Cadastrar participante →
+                    </a>
+
+                </div>
+
+                <div class="aviso-excluir">
+                    <span>⚠️</span>
+
+                    <p>
+                        A exclusão de um participante
+                        <strong>não pode ser desfeita</strong>.
+                        Confira os dados antes de confirmar.
+                    </p>
+                </div>
+
+            </section>
+
+        </div>
+
+        <!-- ACESSO NEGADO -->
+        <section id="acesso-negado-excluir"
+                 class="estado-excluir"
+                 hidden>
+
+            <div class="icone-excluir">👻</div>
+
+            <p class="subtitulo">
+                OPA, TEM ALGUÉM TENTANDO ENTRAR...
+            </p>
+
+            <h2>
+                Espertinho<span>!</span>
+            </h2>
+
+            <h3 id="titulo-acesso-negado-excluir">
+                Você não está logado! KKKKK
+            </h3>
+
+            <p id="texto-acesso-negado-excluir">
+                Faça login primeiro para acessar
+                essa área da festa!
+            </p>
+
+            <a id="link-acesso-negado-excluir"
+               href="/index.html"
+               class="botao-entrar link-estado-excluir">
+                Fazer login →
+            </a>
+
+        </section>
+
+        <!-- ERRO -->
+        <section id="erro-excluir"
+                 class="estado-excluir"
+                 hidden>
+
+            <div class="icone-excluir">🕸️</div>
+
+            <h2>Ops<span>!</span></h2>
+
+            <p>
+                Não conseguimos carregar os participantes.
+                Tente novamente.
+            </p>
+
+            <button type="button"
+                    id="tentar-novamente-excluir"
+                    class="botao-entrar">
+                Tentar novamente →
+            </button>
+
+        </section>
+
+        <footer class="rodape">
+            <span>✦</span>
+            <p>31 DE OUTUBRO • HALLOWEEN DO WALTÃO</p>
+        </footer>
+
+    </div>
+</main>
+
+<!-- MODAL DE CONFIRMAÇÃO -->
+<div id="modal-excluir"
+     class="modal-excluir"
+     hidden>
+
+    <div class="modal-excluir-fundo"
+         id="fundo-modal-excluir">
+    </div>
+
+    <section class="modal-excluir-conteudo"
+             role="dialog"
+             aria-modal="true"
+             aria-labelledby="titulo-modal-excluir"
+             aria-describedby="descricao-modal-excluir">
+
+        <div class="modal-excluir-icone">💀</div>
+
+        <p class="subtitulo">
+            TEM CERTEZA DISSO?
+        </p>
+
+        <h2 id="titulo-modal-excluir">
+            Vai tirar alguém da <span>festa?</span>
+        </h2>
+
+        <p id="descricao-modal-excluir"
+           class="modal-excluir-descricao">
+            Você está prestes a excluir este participante.
+        </p>
+
+        <div class="participante-confirmacao">
+
+            <span>🎭</span>
+
+            <strong id="nome-confirmacao-excluir">
+                Participante
+            </strong>
+
+            <small id="fantasia-confirmacao-excluir">
+                Fantasia
+            </small>
+
+        </div>
+
+        <p class="aviso-modal-excluir">
+            ⚠️ Esta ação não pode ser desfeita!
+        </p>
+
+        <p id="mensagem-modal-excluir"
+           class="mensagem-modal-excluir"
+           role="alert"
+           aria-live="polite"
+           hidden>
+        </p>
+
+        <button type="button"
+                id="cancelar-exclusao"
+                class="botao-entrar botao-cancelar-exclusao">
+            Não, quero manter!
+        </button>
+
+        <button type="button"
+                id="confirmar-exclusao"
+                class="botao-confirmar-exclusao">
+            Sim, excluir participante
+        </button>
+
+    </section>
+</div>
+
+</body>
+</html>

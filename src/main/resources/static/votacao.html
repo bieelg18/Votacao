@@ -1,0 +1,221 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#0d0b13">
+
+    <title>Halloween do Waltão | Votação</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap"
+          rel="stylesheet">
+
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/votacao.css">
+
+    <script src="/js/votacao.js" defer></script>
+</head>
+
+<body>
+
+<main class="pagina pagina-votacao">
+    <div class="conteudo">
+
+        <!-- NAVEGAÇÃO -->
+        <nav class="navegacao-votacao">
+            <a href="/principal.html" class="botao-voltar-votacao">
+                <span>←</span> Voltar
+            </a>
+
+            <span class="marca-votacao">🎃 VOTAÇÃO</span>
+        </nav>
+
+        <!-- CONTEÚDO AUTENTICADO -->
+        <div id="conteudo-votacao" hidden>
+
+            <header class="cabecalho-votacao">
+                <div class="icone-votacao">🗳️</div>
+
+                <p class="subtitulo">É HORA DE ESCOLHER!</p>
+
+                <h1>
+                    Qual é a <span>melhor fantasia?</span>
+                </h1>
+
+                <p>
+                    Bora conhecer os participantes?
+                    Escolha sua fantasia favorita e
+                    ajude a decidir o campeão da festa!
+                </p>
+            </header>
+
+            <section class="secao-participantes">
+
+                <div class="titulo-participantes">
+                    <p class="etiqueta">
+                        <span class="ponto"></span>
+                        A DISPUTA COMEÇOU
+                    </p>
+
+                    <h2>
+                        Nossos participantes<span>.</span>
+                    </h2>
+
+                    <p>
+                        Cada voto conta. Escolha com carinho!
+                        👻
+                    </p>
+                </div>
+
+                <p id="quantidade-participantes"
+                   class="quantidade-participantes"></p>
+
+                <!-- CARDS DINÂMICOS -->
+                <div id="lista-participantes"
+                     class="lista-participantes">
+                </div>
+
+                <!-- NENHUM PARTICIPANTE -->
+                <div id="participantes-vazio"
+                     class="estado-participantes"
+                     hidden>
+                    <span>🕸️</span>
+
+                    <h3>Ninguém apareceu ainda!</h3>
+
+                    <p>
+                        Os participantes ainda não foram
+                        cadastrados. Volte daqui a pouco!
+                    </p>
+                </div>
+
+                <div class="aviso-votacao">
+                    <span>⚠️</span>
+
+                    <p>
+                        Você pode votar <strong>apenas uma vez</strong>.
+                        Seu e-mail precisa estar verificado
+                        para registrar o voto.
+                    </p>
+                </div>
+
+            </section>
+        </div>
+
+        <!-- NÃO AUTENTICADO -->
+        <section id="acesso-negado-votacao"
+                 class="estado-votacao"
+                 hidden>
+
+            <div class="icone-votacao">👻</div>
+
+            <p class="subtitulo">
+                OPA, TEM ALGUÉM TENTANDO ENTRAR...
+            </p>
+
+            <h2>Espertinho<span>!</span></h2>
+
+            <h3>Você não está logado! KKKKK</h3>
+
+            <p>
+                Achou que ia votar sem convite?
+                Faça login primeiro para participar!
+            </p>
+
+            <a href="/index.html"
+               class="botao-entrar link-login-votacao">
+                Fazer login →
+            </a>
+        </section>
+
+        <!-- ERRO DE CARREGAMENTO -->
+        <section id="erro-votacao"
+                 class="estado-votacao"
+                 hidden>
+
+            <div class="icone-votacao">🕸️</div>
+
+            <h2>Ops<span>!</span></h2>
+
+            <p>
+                Não conseguimos carregar os participantes.
+                Tente novamente.
+            </p>
+
+            <button type="button"
+                    id="tentar-novamente-votacao"
+                    class="botao-entrar">
+                Tentar novamente →
+            </button>
+        </section>
+
+        <footer class="rodape">
+            <span>✦</span>
+            <p>31 DE OUTUBRO • HALLOWEEN DO WALTÃO</p>
+        </footer>
+
+    </div>
+</main>
+
+<!-- MODAL PERSONALIZADO -->
+<div id="modal-votacao"
+     class="modal-votacao"
+     hidden>
+
+    <div class="modal-fundo"></div>
+
+    <section class="modal-conteudo"
+             role="dialog"
+             aria-modal="true"
+             aria-labelledby="modal-titulo"
+             aria-describedby="modal-descricao"
+             tabindex="-1">
+
+        <div id="modal-icone" class="modal-icone">
+            🎃
+        </div>
+
+        <p id="modal-etiqueta" class="modal-etiqueta">
+            CONFIRME SUA ESCOLHA
+        </p>
+
+        <h2 id="modal-titulo">
+            É essa mesmo?
+        </h2>
+
+        <p id="modal-descricao" class="modal-descricao">
+        </p>
+
+        <p id="modal-erro"
+           class="modal-erro"
+           role="alert"
+           hidden>
+        </p>
+
+        <div class="modal-acoes">
+
+            <button type="button"
+                    id="modal-confirmar"
+                    class="modal-botao-principal">
+                Confirmar meu voto
+            </button>
+
+            <button type="button"
+                    id="modal-cancelar"
+                    class="modal-botao-secundario">
+                Não, quero escolher outra
+            </button>
+
+        </div>
+    </section>
+</div>
+
+</body>
+</html>

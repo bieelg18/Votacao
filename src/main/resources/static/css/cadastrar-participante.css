@@ -1,0 +1,323 @@
+
+/* ========================================
+   CADASTRAR PARTICIPANTE
+======================================== */
+
+#conteudo-cadastro-participante[hidden],
+#acesso-negado-cadastro[hidden],
+#erro-pagina-cadastro[hidden],
+#previa-imagem[hidden],
+#erro-imagem[hidden],
+#mensagem-cadastro[hidden] {
+    display: none !important;
+}
+
+.pagina-cadastrar-participante {
+    min-height: 100dvh;
+}
+
+/* NAVEGAÇÃO */
+
+.navegacao-cadastro-participante {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 40px;
+}
+
+.botao-voltar-cadastro {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: #f8f3ef;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.botao-voltar-cadastro span {
+    color: #ff842c;
+    font-size: 24px;
+}
+
+.marca-cadastro-participante {
+    color: #ffad58;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+/* CABEÇALHO */
+
+.cabecalho-cadastro-participante {
+    text-align: center;
+    margin-bottom: 28px;
+}
+
+.icone-cadastro-participante {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 76px;
+    height: 76px;
+    margin: 0 auto 22px;
+    background: #261b2e;
+    border: 1px solid #392c40;
+    border-radius: 24px;
+    font-size: 39px;
+}
+
+.cabecalho-cadastro-participante .subtitulo {
+    margin-bottom: 12px;
+}
+
+.cabecalho-cadastro-participante h1 {
+    color: #f8f3ef;
+    font-family: "Outfit", sans-serif;
+    font-size: clamp(25px, 7vw, 32px);
+    font-weight: 800;
+    line-height: 1.2;
+    margin: 0 0 12px;
+}
+
+.cabecalho-cadastro-participante h1 span {
+    color: #ff842c;
+}
+
+.cabecalho-cadastro-participante > p:last-child {
+    color: #a79eaa;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+/* CARD */
+
+.card-cadastro-participante {
+    background: #1b1522;
+    border: 1px solid #392c40;
+    border-radius: 24px;
+    padding: 26px 20px;
+}
+
+.card-cadastro-cabecalho {
+    margin-bottom: 26px;
+}
+
+.card-cadastro-cabecalho .etiqueta {
+    margin-bottom: 12px;
+}
+
+.card-cadastro-cabecalho h2 {
+    color: #f8f3ef;
+    font-family: "Outfit", sans-serif;
+    font-size: 24px;
+    font-weight: 800;
+    line-height: 1.2;
+    margin: 0 0 8px;
+}
+
+.card-cadastro-cabecalho h2 span {
+    color: #ff842c;
+}
+
+.card-cadastro-cabecalho > p:last-child {
+    color: #a79eaa;
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+/* CAMPOS */
+
+#form-cadastrar-participante {
+    display: flex;
+    flex-direction: column;
+    gap: 19px;
+}
+
+.campo-cadastro-participante {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+}
+
+.campo-cadastro-participante label {
+    color: #f8f3ef;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.campo-cadastro-participante input {
+    width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+    padding: 15px 14px;
+    background: #241c2b;
+    border: 1px solid #392c40;
+    border-radius: 13px;
+    outline: none;
+    color: #f8f3ef;
+    font-family: "DM Sans", sans-serif;
+    font-size: 14px;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.campo-cadastro-participante input::placeholder {
+    color: #827688;
+}
+
+.campo-cadastro-participante input:focus {
+    border-color: #ff842c;
+    box-shadow: 0 0 0 3px rgba(255, 132, 44, 0.12);
+}
+
+.campo-cadastro-participante small {
+    color: #a79eaa;
+    font-size: 11px;
+    line-height: 1.5;
+}
+
+/* PRÉVIA DA IMAGEM */
+
+.previa-imagem {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.previa-imagem > p {
+    color: #ffad58;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.previa-imagem-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 180px;
+    overflow: hidden;
+    background: #241c2b;
+    border: 1px solid #392c40;
+    border-radius: 15px;
+}
+
+#imagem-preview {
+    display: block;
+    width: 100%;
+    max-height: 280px;
+    object-fit: contain;
+}
+
+.erro-imagem {
+    padding: 24px 15px;
+    color: #ffad58;
+    font-size: 13px;
+    line-height: 1.6;
+    text-align: center;
+}
+
+/* MENSAGENS */
+
+.mensagem-cadastro {
+    padding: 13px 14px;
+    border-radius: 12px;
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+.mensagem-cadastro.sucesso {
+    color: #7de0a5;
+    background: rgba(125, 224, 165, 0.08);
+    border: 1px solid rgba(125, 224, 165, 0.25);
+}
+
+.mensagem-cadastro.erro {
+    color: #ff858b;
+    background: rgba(255, 100, 110, 0.08);
+    border: 1px solid rgba(255, 100, 110, 0.25);
+}
+
+.botao-salvar-participante {
+    width: 100%;
+    cursor: pointer;
+}
+
+.botao-salvar-participante:disabled {
+    opacity: 0.65;
+    cursor: not-allowed;
+}
+
+/* AVISO */
+
+.aviso-cadastro-participante {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin-top: 24px;
+    padding: 14px;
+    background: #261e2b;
+    border: 1px solid #392c40;
+    border-radius: 12px;
+}
+
+.aviso-cadastro-participante > span {
+    font-size: 19px;
+}
+
+.aviso-cadastro-participante p {
+    color: #a79eaa;
+    font-size: 12px;
+    line-height: 1.6;
+}
+
+/* ESTADOS ALTERNATIVOS */
+
+.estado-cadastro-participante {
+    background: #1b1522;
+    border: 1px solid #392c40;
+    border-radius: 24px;
+    padding: 34px 22px;
+    text-align: center;
+}
+
+.estado-cadastro-participante .subtitulo {
+    margin-bottom: 16px;
+}
+
+.estado-cadastro-participante h2 {
+    color: #f8f3ef;
+    font-family: "Outfit", sans-serif;
+    font-size: 30px;
+    margin-bottom: 12px;
+}
+
+.estado-cadastro-participante h2 span {
+    color: #ff842c;
+}
+
+.estado-cadastro-participante > p:not(.subtitulo) {
+    color: #a79eaa;
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 24px;
+}
+
+.link-voltar-cadastro {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    text-decoration: none;
+}
+
+.pagina-cadastrar-participante .rodape {
+    margin-top: 38px;
+}
+
+@media (max-width: 360px) {
+    .card-cadastro-participante {
+        padding: 22px 14px;
+    }
+}

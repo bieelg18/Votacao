@@ -1,0 +1,469 @@
+
+/* ========================================
+   VOTAÇÃO - HALLOWEEN DO WALTÃO
+======================================== */
+
+#conteudo-votacao[hidden],
+#acesso-negado-votacao[hidden],
+#erro-votacao[hidden],
+#participantes-vazio[hidden],
+#modal-votacao[hidden],
+#modal-erro[hidden] {
+    display: none !important;
+}
+
+.pagina-votacao {
+    min-height: 100dvh;
+}
+
+/* NAVEGAÇÃO */
+
+.navegacao-votacao {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 40px;
+}
+
+.botao-voltar-votacao {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: #f8f3ef;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.botao-voltar-votacao span {
+    color: #ff842c;
+    font-size: 24px;
+}
+
+.marca-votacao {
+    color: #ffad58;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+/* CABEÇALHO */
+
+.cabecalho-votacao {
+    text-align: center;
+    margin-bottom: 32px;
+}
+
+.icone-votacao {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 76px;
+    height: 76px;
+    margin: 0 auto 22px;
+    background: #261b2e;
+    border: 1px solid #392c40;
+    border-radius: 24px;
+    font-size: 39px;
+}
+
+.cabecalho-votacao .subtitulo {
+    margin-bottom: 12px;
+}
+
+.cabecalho-votacao h1 {
+    color: #f8f3ef;
+    font-family: "Outfit", sans-serif;
+    font-size: clamp(26px, 7vw, 32px);
+    font-weight: 800;
+    line-height: 1.2;
+    margin: 0 0 12px;
+}
+
+.cabecalho-votacao h1 span {
+    color: #ff842c;
+}
+
+.cabecalho-votacao > p:last-child {
+    color: #a79eaa;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+/* SEÇÃO PRINCIPAL */
+
+.secao-participantes {
+    background: #1b1522;
+    border: 1px solid #392c40;
+    border-radius: 24px;
+    padding: 26px 20px;
+}
+
+.titulo-participantes .etiqueta {
+    margin-bottom: 12px;
+}
+
+.titulo-participantes h2 {
+    color: #f8f3ef;
+    font-family: "Outfit", sans-serif;
+    font-size: 24px;
+    font-weight: 800;
+    line-height: 1.2;
+    margin: 0 0 8px;
+}
+
+.titulo-participantes h2 span {
+    color: #ff842c;
+}
+
+.titulo-participantes > p:last-child {
+    color: #a79eaa;
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+.quantidade-participantes {
+    color: #ffad58;
+    font-size: 11px;
+    font-weight: 700;
+    margin: 20px 0 14px;
+}
+
+/* CARDS */
+
+.lista-participantes {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.card-participante {
+    overflow: hidden;
+    background: #241c2b;
+    border: 1px solid #392c40;
+    border-radius: 18px;
+    transition: border-color 0.2s ease;
+}
+
+.card-participante:hover {
+    border-color: #a9682f;
+}
+
+.imagem-participante {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
+    background: #302438;
+}
+
+.imagem-participante img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.imagem-indisponivel {
+    font-size: 54px;
+}
+
+.corpo-participante {
+    padding: 18px 16px;
+}
+
+.rotulo-participante {
+    color: #ffad58;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+}
+
+.nome-participante-votacao {
+    color: #f8f3ef;
+    font-family: "Outfit", sans-serif;
+    font-size: 21px;
+    font-weight: 800;
+    overflow-wrap: anywhere;
+    margin: 0 0 7px;
+}
+
+.fantasia-participante {
+    color: #a79eaa;
+    font-size: 13px;
+    line-height: 1.5;
+    overflow-wrap: anywhere;
+    margin-bottom: 18px;
+}
+
+.fantasia-participante strong {
+    color: #ffad58;
+}
+
+.botao-votar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    width: 100%;
+    min-height: 46px;
+    padding: 12px;
+    background: linear-gradient(135deg, #ff9a3d, #ff7825);
+    border: none;
+    border-radius: 12px;
+    color: #21130d;
+    font-family: "DM Sans", sans-serif;
+    font-size: 14px;
+    font-weight: 800;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.botao-votar:active {
+    transform: scale(0.98);
+}
+
+.botao-votar:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* AVISO */
+
+.aviso-votacao {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin-top: 22px;
+    padding: 14px;
+    background: #261e2b;
+    border: 1px solid #392c40;
+    border-radius: 12px;
+}
+
+.aviso-votacao > span {
+    font-size: 18px;
+}
+
+.aviso-votacao p {
+    color: #a79eaa;
+    font-size: 12px;
+    line-height: 1.6;
+}
+
+.aviso-votacao strong {
+    color: #ffad58;
+}
+
+/* ESTADOS ALTERNATIVOS */
+
+.estado-votacao {
+    background: #1b1522;
+    border: 1px solid #392c40;
+    border-radius: 24px;
+    padding: 34px 22px;
+    text-align: center;
+}
+
+.estado-votacao .subtitulo {
+    margin-bottom: 24px;
+}
+
+.estado-votacao h2 {
+    color: #f8f3ef;
+    font-family: "Outfit", sans-serif;
+    font-size: 32px;
+    margin: 0 0 12px;
+}
+
+.estado-votacao h2 span {
+    color: #ff842c;
+}
+
+.estado-votacao h3 {
+    color: #ff842c;
+    font-family: "Outfit", sans-serif;
+    font-size: 19px;
+    margin-bottom: 16px;
+}
+
+.estado-votacao > p:not(.subtitulo) {
+    color: #a79eaa;
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 24px;
+}
+
+.link-login-votacao {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    text-decoration: none;
+}
+
+.estado-participantes {
+    padding: 36px 10px;
+    text-align: center;
+}
+
+.estado-participantes > span {
+    font-size: 42px;
+}
+
+.estado-participantes h3 {
+    color: #f8f3ef;
+    font-family: "Outfit", sans-serif;
+    margin: 15px 0 8px;
+}
+
+.estado-participantes p {
+    color: #a79eaa;
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+.pagina-votacao .rodape {
+    margin-top: 38px;
+}
+
+/* ========================================
+   MODAL PERSONALIZADO
+======================================== */
+
+.modal-votacao {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.modal-fundo {
+    position: absolute;
+    inset: 0;
+    background: rgba(5, 3, 9, 0.83);
+    backdrop-filter: blur(7px);
+}
+
+.modal-conteudo {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: 360px;
+    max-height: calc(100dvh - 40px);
+    overflow-y: auto;
+    padding: 30px 22px;
+    background: #1b1522;
+    border: 1px solid #513547;
+    border-radius: 24px;
+    box-shadow: 0 20px 70px rgba(0, 0, 0, 0.35);
+    text-align: center;
+}
+
+.modal-icone {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 74px;
+    height: 74px;
+    margin: 0 auto 20px;
+    background: #30212d;
+    border: 1px solid #513547;
+    border-radius: 22px;
+    font-size: 38px;
+}
+
+.modal-etiqueta {
+    color: #ffad58;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    margin-bottom: 15px;
+}
+
+.modal-conteudo h2 {
+    color: #f8f3ef;
+    font-family: "Outfit", sans-serif;
+    font-size: 27px;
+    font-weight: 800;
+    line-height: 1.2;
+    margin: 0 0 14px;
+}
+
+.modal-descricao {
+    color: #bcb0c0;
+    font-size: 14px;
+    line-height: 1.7;
+    overflow-wrap: anywhere;
+    margin-bottom: 24px;
+}
+
+.modal-descricao strong {
+    color: #ffad58;
+}
+
+.modal-erro {
+    padding: 12px;
+    margin-bottom: 16px;
+    background: rgba(255, 100, 110, 0.08);
+    border: 1px solid #7a404a;
+    border-radius: 10px;
+    color: #ff9ca3;
+    font-size: 12px;
+}
+
+.modal-acoes {
+    display: flex;
+    flex-direction: column;
+    gap: 11px;
+}
+
+.modal-botao-principal,
+.modal-botao-secundario {
+    width: 100%;
+    min-height: 47px;
+    padding: 12px;
+    border-radius: 12px;
+    font-family: "DM Sans", sans-serif;
+    font-size: 14px;
+    font-weight: 800;
+    cursor: pointer;
+}
+
+.modal-botao-principal {
+    border: none;
+    background: linear-gradient(135deg, #ff9a3d, #ff7825);
+    color: #21130d;
+}
+
+.modal-botao-secundario {
+    border: 1px solid #513547;
+    background: transparent;
+    color: #f8f3ef;
+}
+
+.modal-botao-principal:disabled,
+.modal-botao-secundario:disabled {
+    opacity: 0.6;
+    cursor: wait;
+}
+
+body.modal-aberto {
+    overflow: hidden;
+}
+
+@media (max-width: 360px) {
+    .secao-participantes {
+        padding: 22px 14px;
+    }
+
+    .modal-conteudo {
+        padding: 26px 18px;
+    }
+}

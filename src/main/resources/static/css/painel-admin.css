@@ -1,0 +1,360 @@
+
+/* ========================================
+   PAINEL ADMINISTRATIVO
+======================================== */
+
+#conteudo-admin[hidden],
+#acesso-negado-admin[hidden],
+#sem-permissao-admin[hidden],
+#erro-admin[hidden] {
+    display: none !important;
+}
+
+.pagina-admin {
+    min-height: 100dvh;
+}
+
+/* ========================================
+   NAVEGAÇÃO
+======================================== */
+
+.navegacao-admin {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 40px;
+}
+
+.botao-voltar-admin {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: #f8f3ef;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.botao-voltar-admin span {
+    color: #ff842c;
+    font-size: 24px;
+}
+
+.marca-admin {
+    color: #ffad58;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+/* ========================================
+   CABEÇALHO
+======================================== */
+
+.cabecalho-admin {
+    text-align: center;
+    margin-bottom: 28px;
+}
+
+.icone-admin {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 76px;
+    height: 76px;
+
+    margin: 0 auto 22px;
+
+    background: #261b2e;
+    border: 1px solid #392c40;
+    border-radius: 24px;
+
+    font-size: 39px;
+}
+
+.cabecalho-admin .subtitulo {
+    margin-bottom: 12px;
+}
+
+.cabecalho-admin h1 {
+    color: #f8f3ef;
+    font-family: "Outfit", sans-serif;
+    font-size: clamp(25px, 7vw, 32px);
+    font-weight: 800;
+    line-height: 1.2;
+
+    margin: 0 0 12px;
+}
+
+.cabecalho-admin h1 span {
+    color: #ff842c;
+}
+
+.cabecalho-admin > p:last-child {
+    color: #a79eaa;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+/* ========================================
+   CARD PRINCIPAL
+======================================== */
+
+.card-admin {
+    background: #1b1522;
+    border: 1px solid #392c40;
+    border-radius: 24px;
+    padding: 26px 20px;
+}
+
+.card-admin-cabecalho {
+    margin-bottom: 25px;
+}
+
+.card-admin-cabecalho .etiqueta {
+    margin-bottom: 12px;
+}
+
+.card-admin-cabecalho h2 {
+    color: #f8f3ef;
+    font-family: "Outfit", sans-serif;
+    font-size: 25px;
+    font-weight: 800;
+    line-height: 1.2;
+    margin: 0 0 8px;
+}
+
+.card-admin-cabecalho h2 span {
+    color: #ff842c;
+}
+
+.card-admin-cabecalho > p:last-child {
+    color: #a79eaa;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+/* ========================================
+   OPÇÕES ADMINISTRATIVAS
+======================================== */
+
+.opcoes-admin {
+    display: flex;
+    flex-direction: column;
+    gap: 13px;
+}
+
+.opcao-admin-card {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    min-width: 0;
+    padding: 17px 13px;
+
+    background: #241c2b;
+    border: 1px solid #392c40;
+    border-radius: 15px;
+
+    text-decoration: none;
+
+    transition:
+            background 0.2s ease,
+            border-color 0.2s ease,
+            transform 0.2s ease;
+}
+
+.opcao-admin-card:hover {
+    background: #302338;
+    border-color: #ff842c;
+    transform: translateY(-2px);
+}
+
+.opcao-admin-card:focus-visible {
+    outline: 2px solid #ff842c;
+    outline-offset: 3px;
+}
+
+.opcao-admin-icone {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    flex-shrink: 0;
+
+    width: 42px;
+    height: 42px;
+
+    background: #36283b;
+    border-radius: 12px;
+
+    font-size: 20px;
+}
+
+.icone-cadastrar {
+    background: #24372d;
+}
+
+.icone-editar {
+    background: #332b42;
+}
+
+.icone-excluir {
+    background: #40242e;
+}
+
+.icone-usuarios {
+    background: #2c2940;
+}
+
+.opcao-admin-texto {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    gap: 5px;
+    min-width: 0;
+}
+
+.opcao-admin-texto strong {
+    color: #f8f3ef;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1.3;
+}
+
+.opcao-admin-texto small {
+    color: #a79eaa;
+    font-size: 11px;
+    line-height: 1.5;
+}
+
+.opcao-admin-seta {
+    flex-shrink: 0;
+    color: #ff842c;
+    font-size: 22px;
+}
+
+/* ========================================
+   AVISO DE SEGURANÇA
+======================================== */
+
+.aviso-admin {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+
+    margin-top: 23px;
+    padding: 14px;
+
+    background: #261e2b;
+    border: 1px solid #392c40;
+    border-radius: 12px;
+}
+
+.aviso-admin > span {
+    font-size: 19px;
+}
+
+.aviso-admin p {
+    color: #a79eaa;
+    font-size: 12px;
+    line-height: 1.6;
+}
+
+.aviso-admin strong {
+    color: #ffad58;
+}
+
+/* ========================================
+   ACESSO NEGADO / SEM PERMISSÃO / ERRO
+======================================== */
+
+.estado-admin {
+    background: #1b1522;
+    border: 1px solid #392c40;
+    border-radius: 24px;
+
+    padding: 34px 22px;
+    text-align: center;
+}
+
+.estado-admin .subtitulo {
+    margin-bottom: 24px;
+}
+
+.estado-admin h2 {
+    color: #f8f3ef;
+    font-family: "Outfit", sans-serif;
+    font-size: 30px;
+    font-weight: 800;
+    line-height: 1.2;
+    margin: 0 0 12px;
+}
+
+.estado-admin h2 span {
+    color: #ff842c;
+}
+
+.estado-admin h3 {
+    color: #ff842c;
+    font-family: "Outfit", sans-serif;
+    font-size: 18px;
+    margin-bottom: 16px;
+}
+
+.estado-admin > p:not(.subtitulo) {
+    color: #a79eaa;
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 24px;
+}
+
+.link-estado-admin {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* ========================================
+   RODAPÉ
+======================================== */
+
+.pagina-admin .rodape {
+    margin-top: 38px;
+}
+
+/* ========================================
+   TELAS PEQUENAS
+======================================== */
+
+@media (max-width: 360px) {
+
+    .card-admin {
+        padding: 22px 14px;
+    }
+
+    .opcao-admin-card {
+        gap: 9px;
+        padding: 15px 10px;
+    }
+
+    .opcao-admin-texto strong {
+        font-size: 13px;
+    }
+
+    .opcao-admin-texto small {
+        font-size: 11px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .opcao-admin-card {
+        transition: none;
+    }
+}

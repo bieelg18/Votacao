@@ -1,0 +1,130 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#0d0b13">
+
+    <title>Halloween do Waltão | Verificar e-mail</title>
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap"
+          rel="stylesheet">
+
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/verificar-email.css">
+
+    <script src="/js/verificar-email.js" defer></script>
+</head>
+
+<body>
+
+<main class="pagina pagina-verificacao">
+    <div class="conteudo">
+
+        <header class="cabecalho cabecalho-verificacao">
+            <div class="abobora">🎃</div>
+
+            <p class="subtitulo">
+                FALTA POUCO PARA ENTRAR NA FESTA
+            </p>
+
+            <h1>
+                HALLOWEEN
+                <span>DO WALTÃO</span>
+            </h1>
+        </header>
+
+        <section class="card-login card-verificacao">
+
+            <div class="card-cabecalho">
+                <p class="etiqueta">
+                    <span class="ponto"></span>
+                    VERIFICAÇÃO DE E-MAIL
+                </p>
+
+                <h2>
+                    Confirme sua conta<span>.</span>
+                </h2>
+
+                <p class="instrucoes texto-verificacao">
+                    Enviamos um código de 6 dígitos para
+                    o seu e-mail.
+                </p>
+
+                <p id="email-destino" class="email-destino"></p>
+            </div>
+
+            <form id="form-verificacao" novalidate>
+
+                <label class="rotulo-codigo" for="codigo-0">
+                    Código de verificação
+                </label>
+
+                <div class="campos-codigo" id="campos-codigo">
+                    <input id="codigo-0" aria-label="Dígito 1" type="text" inputmode="numeric" maxlength="1" autocomplete="one-time-code">
+                    <input aria-label="Dígito 2" type="text" inputmode="numeric" maxlength="1">
+                    <input aria-label="Dígito 3" type="text" inputmode="numeric" maxlength="1">
+                    <input aria-label="Dígito 4" type="text" inputmode="numeric" maxlength="1">
+                    <input aria-label="Dígito 5" type="text" inputmode="numeric" maxlength="1">
+                    <input aria-label="Dígito 6" type="text" inputmode="numeric" maxlength="1">
+                </div>
+
+                <p class="aviso-spam">
+                    Não encontrou? Confira também sua caixa de spam.
+                </p>
+
+                <p id="mensagem-erro"
+                   class="mensagem-erro"
+                   role="alert"
+                   aria-live="polite"
+                   hidden></p>
+
+                <p id="mensagem-sucesso"
+                   class="mensagem-sucesso"
+                   role="status"
+                   aria-live="polite"
+                   hidden></p>
+
+                <button type="submit"
+                        id="botao-confirmar"
+                        class="botao-entrar">
+                    Confirmar e-mail →
+                </button>
+            </form>
+
+            <div class="area-reenvio">
+                <p>Não recebeu o código?</p>
+
+                <button type="button"
+                        id="botao-reenviar"
+                        class="botao-reenviar"
+                        disabled>
+                    Reenviar código em <span id="contador">60</span>s
+                </button>
+            </div>
+
+            <div class="voltar-login">
+                <a href="/index.html">← Voltar para o login</a>
+            </div>
+
+        </section>
+
+        <footer class="rodape">
+            <span>✦</span>
+            <p>31 DE OUTUBRO • HALLOWEEN DO WALTÃO</p>
+        </footer>
+
+    </div>
+</main>
+
+</body>
+</html>

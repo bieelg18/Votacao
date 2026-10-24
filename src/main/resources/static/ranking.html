@@ -1,0 +1,222 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#0d0b13">
+
+    <title>Halloween do Waltão | Ranking</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link
+            href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap"
+            rel="stylesheet">
+
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/ranking.css">
+
+    <script src="/js/ranking.js" defer></script>
+</head>
+
+<body>
+
+<main class="pagina pagina-ranking">
+    <div class="conteudo">
+
+        <!-- NAVEGAÇÃO -->
+        <nav class="navegacao-ranking">
+            <a href="/principal.html"
+               class="botao-voltar-ranking">
+                <span>←</span> Voltar
+            </a>
+
+            <span class="marca-ranking">🎃 RANKING</span>
+        </nav>
+
+        <!-- CONTEÚDO AUTENTICADO -->
+        <div id="conteudo-ranking" hidden>
+
+            <header class="cabecalho-ranking">
+                <div class="icone-ranking">🏆</div>
+
+                <p class="subtitulo">
+                    A DISPUTA ESTÁ ACIRRADA
+                </p>
+
+                <h1>
+                    Quem será o <span>campeão?</span>
+                </h1>
+
+                <p>
+                    Bora descobrir quem está conquistando
+                    mais votos! Será que é você? 👀
+                </p>
+            </header>
+
+            <section class="card-ranking">
+
+                <div class="card-ranking-cabecalho">
+                    <p class="etiqueta">
+                        <span class="ponto"></span>
+                        CLASSIFICAÇÃO DA FESTA
+                    </p>
+
+                    <h2>
+                        Ranking das fantasias<span>.</span>
+                    </h2>
+
+                    <p>
+                        Veja quem está liderando a votação.
+                    </p>
+                </div>
+
+                <!-- CONTROLES DE ATUALIZAÇÃO -->
+                <div class="controles-ranking">
+
+                    <div class="informacao-atualizacao">
+                        <span class="indicador-online"></span>
+
+                        <span>
+                            Atualização automática a cada
+                            <strong>15 segundos</strong>
+                        </span>
+                    </div>
+
+                    <button
+                            type="button"
+                            id="botao-atualizar-ranking"
+                            class="botao-atualizar-ranking">
+
+                        <span
+                                id="icone-atualizar"
+                                class="icone-atualizar"
+                                aria-hidden="true">↻</span>
+
+                        <span id="texto-atualizar">
+                            Atualizar ranking
+                        </span>
+                    </button>
+
+                    <p
+                            id="ultima-atualizacao"
+                            class="ultima-atualizacao"
+                            aria-live="off">
+                        Carregando classificação...
+                    </p>
+
+                    <p
+                            id="aviso-erro-atualizacao"
+                            class="aviso-erro-atualizacao"
+                            role="status"
+                            hidden>
+                    </p>
+
+                </div>
+
+                <!-- LISTA DO RANKING -->
+                <div
+                        id="lista-ranking"
+                        class="lista-ranking"
+                        aria-live="off">
+                </div>
+
+                <!-- RANKING VAZIO -->
+                <div
+                        id="ranking-vazio"
+                        class="ranking-vazio"
+                        hidden>
+
+                    <span>🕸️</span>
+
+                    <h3>Nenhum voto ainda!</h3>
+
+                    <p>
+                        O ranking está esperando os primeiros votos.
+                        Quem será que vai estrear a classificação?
+                    </p>
+                </div>
+
+                <!-- AVISO -->
+                <div class="aviso-ranking">
+                    <span>👻</span>
+
+                    <p>
+                        Apenas participantes que receberam
+                        <strong>pelo menos 1 voto</strong>
+                        aparecem no ranking.
+                    </p>
+                </div>
+
+            </section>
+        </div>
+
+        <!-- NÃO AUTENTICADO -->
+        <section
+                id="acesso-negado-ranking"
+                class="estado-ranking"
+                hidden>
+
+            <div class="icone-ranking">👻</div>
+
+            <p class="subtitulo">
+                OPA, TEM ALGUÉM TENTANDO ENTRAR...
+            </p>
+
+            <h2>Espertinho<span>!</span></h2>
+
+            <h3>Você não está logado! KKKKK</h3>
+
+            <p>
+                Achou que ia espiar o ranking sem convite?
+                Faça login primeiro para participar!
+            </p>
+
+            <a
+                    href="/index.html"
+                    class="botao-entrar link-login-ranking">
+                Fazer login →
+            </a>
+        </section>
+
+        <!-- ERRO INICIAL -->
+        <section
+                id="erro-ranking"
+                class="estado-ranking"
+                hidden>
+
+            <div class="icone-ranking">🕸️</div>
+
+            <h2>Ops<span>!</span></h2>
+
+            <p>
+                Não conseguimos carregar o ranking.
+                Tente novamente.
+            </p>
+
+            <button
+                    type="button"
+                    id="tentar-novamente-ranking"
+                    class="botao-entrar">
+                Tentar novamente →
+            </button>
+        </section>
+
+        <!-- RODAPÉ -->
+        <footer class="rodape">
+            <span>✦</span>
+            <p>
+                31 DE OUTUBRO • HALLOWEEN DO WALTÃO
+            </p>
+        </footer>
+
+    </div>
+</main>
+
+</body>
+</html>

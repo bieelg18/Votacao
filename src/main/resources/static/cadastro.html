@@ -1,0 +1,190 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <meta name="theme-color" content="#0d0b13">
+
+    <title>Halloween do Waltão | Cadastro</title>
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap"
+          rel="stylesheet">
+
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/cadastro.css">
+
+    <script src="/js/cadastro.js" defer></script>
+</head>
+
+<body>
+
+<main class="pagina pagina-cadastro">
+
+    <div class="conteudo">
+
+        <header class="cabecalho cabecalho-cadastro">
+
+            <div class="abobora">🎃</div>
+
+            <p class="subtitulo">
+                SUA ENTRADA PARA A FESTA
+            </p>
+
+            <h1>
+                HALLOWEEN
+                <span>DO WALTÃO</span>
+            </h1>
+
+            <p class="descricao">
+                Crie sua conta e participe da votação!
+            </p>
+
+        </header>
+
+        <section class="card-login card-cadastro">
+
+            <div class="card-cabecalho">
+
+                <p class="etiqueta">
+                    <span class="ponto"></span>
+                    NOVO CONVIDADO
+                </p>
+
+                <h2>
+                    Crie sua conta<span>.</span>
+                </h2>
+
+                <p class="instrucoes">
+                    Preencha seus dados para entrar na festa.
+                </p>
+
+            </div>
+
+            <form id="form-cadastro" novalidate>
+
+                <div class="campo">
+                    <label for="nome">Nome</label>
+
+                    <input
+                            type="text"
+                            id="nome"
+                            placeholder="Como podemos te chamar?"
+                            autocomplete="name"
+                            maxlength="100"
+                            required
+                    >
+                </div>
+
+                <div class="campo">
+                    <label for="email">E-mail</label>
+
+                    <input
+                            type="email"
+                            id="email"
+                            placeholder="seuemail@exemplo.com"
+                            autocomplete="email"
+                            required
+                    >
+                </div>
+
+                <div class="campo">
+                    <label for="senha">Senha</label>
+
+                    <div class="campo-senha">
+                        <input
+                                type="password"
+                                id="senha"
+                                placeholder="Crie uma senha"
+                                autocomplete="new-password"
+                                required
+                        >
+
+                        <button
+                                type="button"
+                                class="alternar-senha"
+                                data-alvo="senha"
+                                aria-label="Mostrar senha"
+                        >
+                            Mostrar
+                        </button>
+                    </div>
+                </div>
+
+                <div class="campo">
+                    <label for="confirmar-senha">
+                        Confirmar senha
+                    </label>
+
+                    <div class="campo-senha">
+                        <input
+                                type="password"
+                                id="confirmar-senha"
+                                placeholder="Repita sua senha"
+                                autocomplete="new-password"
+                                required
+                        >
+
+                        <button
+                                type="button"
+                                class="alternar-senha"
+                                data-alvo="confirmar-senha"
+                                aria-label="Mostrar confirmação da senha"
+                        >
+                            Mostrar
+                        </button>
+                    </div>
+                </div>
+
+                <p
+                        id="mensagem-erro"
+                        class="mensagem-erro"
+                        role="alert"
+                        aria-live="polite"
+                        hidden
+                ></p>
+
+                <button
+                        type="submit"
+                        id="botao-cadastro"
+                        class="botao-entrar"
+                >
+                    Criar minha conta →
+                </button>
+
+            </form>
+
+            <div class="cadastro">
+                <span>Já tem uma conta?</span>
+
+                <a href="/index.html">
+                    Fazer login
+                </a>
+            </div>
+
+        </section>
+
+        <footer class="rodape">
+            <span>✦</span>
+
+            <p>
+                31 DE OUTUBRO • HALLOWEEN DO WALTÃO
+            </p>
+        </footer>
+
+    </div>
+
+</main>
+
+</body>
+</html>

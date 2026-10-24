@@ -1,0 +1,228 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#0d0b13">
+
+    <title>Halloween do Waltão | Usuários</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/listar-usuarios.css">
+
+    <script src="/js/listar-usuarios.js" defer></script>
+</head>
+<body>
+
+<main class="pagina pagina-usuarios">
+    <div class="conteudo">
+
+        <nav class="navegacao-usuarios">
+            <a href="/painel-admin.html" class="botao-voltar-usuarios">
+                <span>←</span> Voltar
+            </a>
+            <span class="marca-usuarios">🛡️ ADMIN</span>
+        </nav>
+
+        <!-- ÁREA RESTRITA AO ADMIN -->
+        <div id="conteudo-usuarios" hidden>
+
+            <header class="cabecalho-usuarios">
+                <div class="icone-usuarios">👥</div>
+                <p class="subtitulo">CONTROLE DA FESTA</p>
+                <h1>Quem está na <span>festa?</span></h1>
+                <p>Confira os convidados e gerencie suas permissões.</p>
+            </header>
+
+            <section class="card-usuarios">
+                <div class="card-usuarios-cabecalho">
+                    <p class="etiqueta">
+                        <span class="ponto"></span>
+                        GERENCIAMENTO
+                    </p>
+
+                    <h2>Usuários cadastrados<span>.</span></h2>
+                    <p>Todos os convidados registrados no sistema.</p>
+                </div>
+
+                <div class="barra-usuarios">
+                    <span id="total-usuarios">0 usuários cadastrados</span>
+
+                    <button type="button" id="atualizar-usuarios"
+                            class="botao-atualizar-usuarios">
+                        ↻ Atualizar
+                    </button>
+                </div>
+
+                <p id="mensagem-lista" class="mensagem-lista"
+                   role="status" aria-live="polite" hidden></p>
+
+                <div id="lista-usuarios" class="lista-usuarios"></div>
+
+                <div id="usuarios-vazio" class="usuarios-vazio" hidden>
+                    <span>🕸️</span>
+                    <h3>Nenhum usuário por aqui!</h3>
+                    <p>Ainda não temos convidados cadastrados.</p>
+                </div>
+
+                <div class="aviso-usuarios">
+                    <span>🛡️</span>
+                    <p>
+                        Apenas administradores podem alterar permissões
+                        ou excluir contas.
+                    </p>
+                </div>
+            </section>
+        </div>
+
+        <!-- NÃO AUTENTICADO -->
+        <section id="acesso-negado-usuarios"
+                 class="estado-usuarios" hidden>
+            <div class="icone-usuarios">👻</div>
+            <p class="subtitulo">OPA, TEM ALGUÉM TENTANDO ENTRAR...</p>
+            <h2>Espertinho<span>!</span></h2>
+            <h3>Você não está logado! KKKKK</h3>
+            <p>Faça login primeiro para entrar na festa!</p>
+            <a href="/index.html" class="botao-entrar link-estado">
+                Fazer login →
+            </a>
+        </section>
+
+        <!-- LOGADO SEM PERMISSÃO ADMIN -->
+        <section id="sem-permissao-usuarios"
+                 class="estado-usuarios" hidden>
+            <div class="icone-usuarios">🚫</div>
+            <p class="subtitulo">ÁREA RESTRITA</p>
+            <h2>Ei, <span>calma aí!</span></h2>
+            <h3>Só o ADMIN entra aqui! KKKKK</h3>
+            <p>
+                Essa parte da festa é exclusiva dos administradores.
+            </p>
+            <a href="/principal.html" class="botao-entrar link-estado">
+                Voltar para a festa →
+            </a>
+        </section>
+
+        <!-- ERRO -->
+        <section id="erro-usuarios" class="estado-usuarios" hidden>
+            <div class="icone-usuarios">🕸️</div>
+            <h2>Ops<span>!</span></h2>
+            <p>Não conseguimos carregar os usuários. Tente novamente.</p>
+            <button type="button" id="tentar-novamente-usuarios"
+                    class="botao-entrar">
+                Tentar novamente →
+            </button>
+        </section>
+
+        <footer class="rodape">
+            <span>✦</span>
+            <p>31 DE OUTUBRO • HALLOWEEN DO WALTÃO</p>
+        </footer>
+    </div>
+</main>
+
+<!-- MODAL: ALTERAR PERMISSÃO -->
+<div id="modal-permissao" class="fundo-modal-usuarios"
+     role="presentation" hidden>
+
+    <section class="modal-usuarios" role="dialog"
+             aria-modal="true"
+             aria-labelledby="titulo-modal-permissao">
+
+        <div class="modal-icone">🛡️</div>
+        <p class="modal-etiqueta">GERENCIAR ACESSO</p>
+        <h2 id="titulo-modal-permissao">
+            Alterar <span>permissão?</span>
+        </h2>
+
+        <p class="modal-descricao">
+            Escolha o nível de acesso de
+            <strong id="nome-modal-permissao"></strong>.
+        </p>
+
+        <label for="seletor-permissao" class="rotulo-permissao">
+            NOVA PERMISSÃO
+        </label>
+
+        <select id="seletor-permissao" class="seletor-permissao">
+            <option value="USUARIO">👤 USUARIO</option>
+            <option value="ADMIN">🛡️ ADMIN</option>
+        </select>
+
+        <p class="aviso-modal">
+            Administradores podem gerenciar participantes e usuários.
+        </p>
+
+        <p id="erro-modal-permissao" class="erro-modal"
+           role="alert" hidden></p>
+
+        <div class="acoes-modal">
+            <button type="button" id="salvar-permissao"
+                    class="botao-modal-primario">
+                Salvar alteração →
+            </button>
+
+            <button type="button" id="cancelar-permissao"
+                    class="botao-modal-secundario">
+                Cancelar
+            </button>
+        </div>
+    </section>
+</div>
+
+<!-- MODAL: EXCLUIR USUÁRIO -->
+<div id="modal-exclusao" class="fundo-modal-usuarios"
+     role="presentation" hidden>
+
+    <section class="modal-usuarios" role="dialog"
+             aria-modal="true"
+             aria-labelledby="titulo-modal-exclusao">
+
+        <div class="modal-icone modal-icone-perigo">💀</div>
+        <p class="modal-etiqueta etiqueta-perigo">
+            TEM CERTEZA DISSO?
+        </p>
+
+        <h2 id="titulo-modal-exclusao">
+            Expulsar da <span>festa?</span>
+        </h2>
+
+        <p class="modal-descricao">
+            Você está prestes a excluir a conta de
+            <strong id="nome-modal-exclusao"></strong>.
+        </p>
+
+        <p class="aviso-exclusao">
+            ⚠️ A conta será excluída permanentemente.
+            Se o usuário tiver votado, seu voto também
+            deverá ser removido pelo backend.
+        </p>
+
+        <p class="aviso-irreversivel">
+            Essa ação não pode ser desfeita!
+        </p>
+
+        <p id="erro-modal-exclusao" class="erro-modal"
+           role="alert" hidden></p>
+
+        <div class="acoes-modal">
+            <button type="button" id="cancelar-exclusao"
+                    class="botao-modal-primario">
+                Não, quero cancelar!
+            </button>
+
+            <button type="button" id="confirmar-exclusao"
+                    class="botao-modal-perigo">
+                Sim, excluir usuário
+            </button>
+        </div>
+    </section>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,449 @@
+
+/* ========================================
+   RANKING DAS FANTASIAS
+======================================== */
+
+#conteudo-ranking[hidden],
+#acesso-negado-ranking[hidden],
+#erro-ranking[hidden],
+#ranking-vazio[hidden],
+#aviso-erro-atualizacao[hidden] {
+    display: none !important;
+}
+
+.pagina-ranking {
+    min-height: 100dvh;
+}
+
+/* ========================================
+   NAVEGAÇÃO
+======================================== */
+
+.navegacao-ranking {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 40px;
+}
+
+.botao-voltar-ranking {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: #f8f3ef;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.botao-voltar-ranking span {
+    color: #ff842c;
+    font-size: 24px;
+}
+
+.marca-ranking {
+    color: #ffad58;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+/* ========================================
+   CABEÇALHO
+======================================== */
+
+.cabecalho-ranking {
+    text-align: center;
+    margin-bottom: 28px;
+}
+
+.icone-ranking {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 76px;
+    height: 76px;
+    margin: 0 auto 22px;
+    background: #261b2e;
+    border: 1px solid #392c40;
+    border-radius: 24px;
+    font-size: 39px;
+}
+
+.cabecalho-ranking .subtitulo {
+    margin-bottom: 12px;
+}
+
+.cabecalho-ranking h1 {
+    color: #f8f3ef;
+    font-family: "Outfit", sans-serif;
+    font-size: clamp(25px, 7vw, 32px);
+    font-weight: 800;
+    line-height: 1.2;
+    margin: 0 0 12px;
+}
+
+.cabecalho-ranking h1 span {
+    color: #ff842c;
+}
+
+.cabecalho-ranking > p:last-child {
+    color: #a79eaa;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+/* ========================================
+   CARD PRINCIPAL
+======================================== */
+
+.card-ranking {
+    background: #1b1522;
+    border: 1px solid #392c40;
+    border-radius: 24px;
+    padding: 26px 20px;
+}
+
+.card-ranking-cabecalho {
+    margin-bottom: 20px;
+}
+
+.card-ranking-cabecalho .etiqueta {
+    margin-bottom: 12px;
+}
+
+.card-ranking-cabecalho h2 {
+    color: #f8f3ef;
+    font-family: "Outfit", sans-serif;
+    font-size: 24px;
+    font-weight: 800;
+    line-height: 1.2;
+    margin: 0 0 8px;
+}
+
+.card-ranking-cabecalho h2 span {
+    color: #ff842c;
+}
+
+.card-ranking-cabecalho > p:last-child {
+    color: #a79eaa;
+    font-size: 13px;
+}
+
+/* ========================================
+   CONTROLES DE ATUALIZAÇÃO
+======================================== */
+
+.controles-ranking {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 24px;
+    padding: 15px;
+    background: #241c2b;
+    border: 1px solid #392c40;
+    border-radius: 15px;
+}
+
+.informacao-atualizacao {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #a79eaa;
+    font-size: 11px;
+    line-height: 1.5;
+}
+
+.informacao-atualizacao strong {
+    color: #f8f3ef;
+}
+
+.indicador-online {
+    width: 8px;
+    height: 8px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    background: #7de0a5;
+    box-shadow: 0 0 10px rgba(125, 224, 165, 0.35);
+}
+
+.botao-atualizar-ranking {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    min-height: 43px;
+    padding: 11px 14px;
+    border: 1px solid #ff842c;
+    border-radius: 12px;
+    background: rgba(255, 132, 44, 0.09);
+    color: #ffad58;
+    font-family: "DM Sans", sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+    transition:
+            background 0.2s ease,
+            transform 0.2s ease;
+}
+
+.botao-atualizar-ranking:hover:not(:disabled) {
+    background: rgba(255, 132, 44, 0.17);
+}
+
+.botao-atualizar-ranking:active:not(:disabled) {
+    transform: scale(0.98);
+}
+
+.botao-atualizar-ranking:disabled {
+    opacity: 0.65;
+    cursor: wait;
+}
+
+.icone-atualizar {
+    display: inline-block;
+    font-size: 22px;
+    font-weight: 600;
+    line-height: 1;
+}
+
+.icone-atualizar.girando {
+    animation: girar-atualizacao 0.8s linear infinite;
+}
+
+@keyframes girar-atualizacao {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.ultima-atualizacao {
+    margin: 0;
+    color: #a79eaa;
+    font-size: 11px;
+    text-align: center;
+}
+
+.aviso-erro-atualizacao {
+    margin: 0;
+    padding: 10px;
+    border: 1px solid #7a404a;
+    border-radius: 9px;
+    background: rgba(255, 100, 110, 0.08);
+    color: #ff9ca3;
+    font-size: 12px;
+    line-height: 1.5;
+    text-align: center;
+}
+
+/* ========================================
+   PARTICIPANTES
+======================================== */
+
+.lista-ranking {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.item-ranking {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    min-width: 0;
+    padding: 15px 12px;
+    background: #241c2b;
+    border: 1px solid #392c40;
+    border-radius: 15px;
+}
+
+.item-ranking.primeiro-lugar {
+    border-color: #a9682f;
+    background: #302126;
+}
+
+.posicao-ranking {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    width: 35px;
+    font-size: 24px;
+    font-weight: 800;
+    color: #ffad58;
+}
+
+.informacoes-ranking {
+    flex: 1;
+    min-width: 0;
+}
+
+.nome-participante {
+    display: block;
+    color: #f8f3ef;
+    font-size: 14px;
+    font-weight: 700;
+    overflow-wrap: anywhere;
+}
+
+.nome-fantasia {
+    display: block;
+    color: #a79eaa;
+    font-size: 12px;
+    margin-top: 5px;
+    overflow-wrap: anywhere;
+}
+
+.quantidade-votos {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    flex-shrink: 0;
+    gap: 2px;
+}
+
+.quantidade-votos strong {
+    color: #ffad58;
+    font-family: "Outfit", sans-serif;
+    font-size: 23px;
+    font-weight: 800;
+}
+
+.quantidade-votos span {
+    color: #a79eaa;
+    font-size: 10px;
+}
+
+/* ========================================
+   AVISO E RANKING VAZIO
+======================================== */
+
+.aviso-ranking {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin-top: 22px;
+    padding: 14px;
+    background: #261e2b;
+    border: 1px solid #392c40;
+    border-radius: 12px;
+}
+
+.aviso-ranking > span {
+    font-size: 19px;
+}
+
+.aviso-ranking p {
+    color: #a79eaa;
+    font-size: 12px;
+    line-height: 1.6;
+}
+
+.aviso-ranking strong {
+    color: #ffad58;
+}
+
+.ranking-vazio {
+    padding: 24px 10px;
+    text-align: center;
+}
+
+.ranking-vazio > span {
+    font-size: 38px;
+}
+
+.ranking-vazio h3 {
+    color: #f8f3ef;
+    font-family: "Outfit", sans-serif;
+    margin: 14px 0 8px;
+}
+
+.ranking-vazio p {
+    color: #a79eaa;
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+/* ========================================
+   ACESSO NEGADO E ERRO
+======================================== */
+
+.estado-ranking {
+    background: #1b1522;
+    border: 1px solid #392c40;
+    border-radius: 24px;
+    padding: 34px 22px;
+    text-align: center;
+}
+
+.estado-ranking .subtitulo {
+    margin-bottom: 24px;
+}
+
+.estado-ranking h2 {
+    color: #f8f3ef;
+    font-family: "Outfit", sans-serif;
+    font-size: 32px;
+    margin: 0 0 12px;
+}
+
+.estado-ranking h2 span {
+    color: #ff842c;
+}
+
+.estado-ranking h3 {
+    color: #ff842c;
+    font-family: "Outfit", sans-serif;
+    font-size: 19px;
+    margin-bottom: 16px;
+}
+
+.estado-ranking > p:not(.subtitulo) {
+    color: #a79eaa;
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 24px;
+}
+
+.link-login-ranking {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    text-decoration: none;
+}
+
+.pagina-ranking .rodape {
+    margin-top: 38px;
+}
+
+/* ========================================
+   RESPONSIVIDADE
+======================================== */
+
+@media (max-width: 360px) {
+    .card-ranking {
+        padding: 22px 14px;
+    }
+
+    .item-ranking {
+        gap: 9px;
+        padding: 13px 9px;
+    }
+
+    .nome-participante {
+        font-size: 13px;
+    }
+
+    .controles-ranking {
+        padding: 12px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .icone-atualizar.girando {
+        animation: none;
+    }
+}

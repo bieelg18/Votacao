@@ -1,0 +1,282 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <meta name="theme-color" content="#0d0b13">
+
+    <title>Halloween do Waltão | Painel ADMIN</title>
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link
+            href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&display=swap"
+            rel="stylesheet">
+
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/painel-admin.css">
+
+    <script src="/js/painel-admin.js" defer></script>
+</head>
+
+<body>
+
+<main class="pagina pagina-admin">
+
+    <div class="conteudo">
+
+        <!-- NAVEGAÇÃO -->
+        <nav class="navegacao-admin">
+
+            <a href="/principal.html" class="botao-voltar-admin">
+                <span>←</span>
+                Voltar
+            </a>
+
+            <span class="marca-admin">
+                🎃 ÁREA ADMIN
+            </span>
+
+        </nav>
+
+        <!-- PAINEL AUTORIZADO -->
+        <div id="conteudo-admin" hidden>
+
+            <header class="cabecalho-admin">
+
+                <div class="icone-admin">🛡️</div>
+
+                <p class="subtitulo">
+                    CONTROLE DA FESTA
+                </p>
+
+                <h1>
+                    Painel <span>Administrativo.</span>
+                </h1>
+
+                <p>
+                    A festa está nas suas mãos!
+                    Gerencie os participantes e convidados
+                    do Halloween do Waltão.
+                </p>
+
+            </header>
+
+            <section class="card-admin">
+
+                <div class="card-admin-cabecalho">
+
+                    <p class="etiqueta">
+                        <span class="ponto"></span>
+                        CENTRAL DE CONTROLE
+                    </p>
+
+                    <h2>
+                        O que vamos fazer<span>?</span>
+                    </h2>
+
+                    <p>
+                        Escolha uma opção para administrar a festa.
+                    </p>
+
+                </div>
+
+                <div class="opcoes-admin">
+
+                    <!-- CADASTRAR -->
+                    <a href="/cadastrar-participante.html"
+                       class="opcao-admin-card">
+
+                        <span class="opcao-admin-icone icone-cadastrar">
+                            ➕
+                        </span>
+
+                        <span class="opcao-admin-texto">
+                            <strong>Cadastrar participante</strong>
+                            <small>
+                                Adicione uma nova fantasia à disputa.
+                            </small>
+                        </span>
+
+                        <span class="opcao-admin-seta">→</span>
+
+                    </a>
+
+                    <!-- EDITAR -->
+                    <a href="/editar-participante.html"
+                       class="opcao-admin-card">
+
+                        <span class="opcao-admin-icone icone-editar">
+                            ✏️
+                        </span>
+
+                        <span class="opcao-admin-texto">
+                            <strong>Editar participante</strong>
+                            <small>
+                                Atualize os dados de um participante.
+                            </small>
+                        </span>
+
+                        <span class="opcao-admin-seta">→</span>
+
+                    </a>
+
+                    <!-- EXCLUIR -->
+                    <a href="/excluir-participante.html"
+                       class="opcao-admin-card">
+
+                        <span class="opcao-admin-icone icone-excluir">
+                            🗑️
+                        </span>
+
+                        <span class="opcao-admin-texto">
+                            <strong>Excluir participante</strong>
+                            <small>
+                                Remova um participante da competição.
+                            </small>
+                        </span>
+
+                        <span class="opcao-admin-seta">→</span>
+
+                    </a>
+
+                    <!-- LISTAR USUÁRIOS -->
+                    <a href="/listar-usuarios.html"
+                       class="opcao-admin-card">
+
+                        <span class="opcao-admin-icone icone-usuarios">
+                            👥
+                        </span>
+
+                        <span class="opcao-admin-texto">
+                            <strong>Listar usuários</strong>
+                            <small>
+                                Veja os convidados cadastrados.
+                            </small>
+                        </span>
+
+                        <span class="opcao-admin-seta">→</span>
+
+                    </a>
+
+                </div>
+
+                <div class="aviso-admin">
+                    <span>🔒</span>
+                    <p>
+                        Esta área é exclusiva para
+                        <strong>administradores da festa.</strong>
+                    </p>
+                </div>
+
+            </section>
+
+        </div>
+
+        <!-- NÃO AUTENTICADO -->
+        <section id="acesso-negado-admin"
+                 class="estado-admin"
+                 hidden>
+
+            <div class="icone-admin">👻</div>
+
+            <p class="subtitulo">
+                OPA, TEM ALGUÉM TENTANDO ENTRAR...
+            </p>
+
+            <h2>
+                Espertinho<span>!</span>
+            </h2>
+
+            <h3>
+                Você não está logado! KKKKK
+            </h3>
+
+            <p>
+                Achou que ia administrar a festa sem convite?
+                Faça login primeiro!
+            </p>
+
+            <a href="/index.html"
+               class="botao-entrar link-estado-admin">
+                Fazer login →
+            </a>
+
+        </section>
+
+        <!-- AUTENTICADO SEM PERMISSÃO -->
+        <section id="sem-permissao-admin"
+                 class="estado-admin"
+                 hidden>
+
+            <div class="icone-admin">🚫</div>
+
+            <p class="subtitulo">
+                ACESSO RESTRITO
+            </p>
+
+            <h2>
+                Opa, lugar <span>errado!</span>
+            </h2>
+
+            <h3>
+                Essa área é só para ADMIN! KKKKK
+            </h3>
+
+            <p>
+                Você está logado, mas não tem permissão
+                para acessar o painel administrativo.
+                Volte para a festa!
+            </p>
+
+            <a href="/principal.html"
+               class="botao-entrar link-estado-admin">
+                Voltar para a festa →
+            </a>
+
+        </section>
+
+        <!-- ERRO DE CONEXÃO -->
+        <section id="erro-admin"
+                 class="estado-admin"
+                 hidden>
+
+            <div class="icone-admin">🕸️</div>
+
+            <h2>
+                Ops<span>!</span>
+            </h2>
+
+            <p>
+                Não conseguimos verificar sua permissão.
+                Tente novamente.
+            </p>
+
+            <button type="button"
+                    id="tentar-novamente-admin"
+                    class="botao-entrar link-estado-admin">
+                Tentar novamente →
+            </button>
+
+        </section>
+
+        <!-- RODAPÉ -->
+        <footer class="rodape">
+            <span>✦</span>
+            <p>31 DE OUTUBRO • HALLOWEEN DO WALTÃO</p>
+        </footer>
+
+    </div>
+
+</main>
+
+</body>
+</html>

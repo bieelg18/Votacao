@@ -1,0 +1,226 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <meta name="theme-color" content="#0d0b13">
+
+    <title>Halloween do Waltão | Início</title>
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link
+            href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&display=swap"
+            rel="stylesheet">
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/js/principal.js" defer></script>
+</head>
+
+<body>
+
+<!-- PÁGINA PRINCIPAL -->
+
+<main class="pagina pagina-principal"
+      id="pagina-principal"
+      hidden>
+
+    <div class="conteudo">
+
+        <!-- MENU SUPERIOR -->
+        <nav class="navegacao-principal"
+             aria-label="Menu principal">
+
+            <div class="marca-menu">
+                <span>🎃</span>
+                <span>HALLOWEEN DO WALTÃO</span>
+            </div>
+
+            <button
+                    type="button"
+                    class="botao-menu"
+                    id="abrir-menu"
+                    aria-label="Abrir menu"
+                    aria-expanded="false"
+                    aria-controls="menu-opcoes">
+
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <div class="menu-opcoes"
+                 id="menu-opcoes"
+                 hidden>
+
+                <a href="/minha-conta.html">
+                    Minha conta
+                </a>
+
+                <!-- VISÍVEL APENAS PARA ADMIN -->
+                <a href="/painel-admin.html"
+                   id="opcao-admin"
+                   class="opcao-admin"
+                   hidden>
+                    🛡️ Painel ADMIN
+                </a>
+
+                <button type="button" id="sair">
+                    Sair da conta
+                </button>
+
+            </div>
+        </nav>
+
+        <!-- APRESENTAÇÃO -->
+        <header class="cabecalho cabecalho-principal">
+
+            <div class="abobora">🎃</div>
+
+            <p class="subtitulo">
+                A NOITE MAIS ASSUSTADORA DO ANO
+            </p>
+
+            <h1>
+                HALLOWEEN
+                <span>DO WALTÃO</span>
+            </h1>
+
+            <p class="descricao">
+                A diversão está só começando!
+            </p>
+
+        </header>
+
+        <!-- BOAS-VINDAS -->
+        <section class="boas-vindas">
+
+            <p class="etiqueta">
+                <span class="ponto"></span>
+                ÁREA DOS CONVIDADOS
+            </p>
+
+            <h2>
+                Bem-vindo à festa<span>.</span>
+            </h2>
+
+            <p>
+                Escolha o que deseja fazer e aproveite
+                a noite mais assustadora do ano!
+            </p>
+
+        </section>
+
+        <!-- OPÇÕES PRINCIPAIS -->
+        <section class="opcoes-principais"
+                 aria-label="Opções da festa">
+
+            <!-- VOTAÇÃO -->
+            <a href="/votacao.html"
+               class="opcao-principal opcao-votar">
+
+                <span class="icone-opcao">🗳️</span>
+
+                <span class="texto-opcao">
+                    <strong>
+                        Votar na melhor fantasia
+                    </strong>
+
+                    <small>
+                        Conheça os participantes e escolha
+                        sua fantasia favorita.
+                    </small>
+                </span>
+
+                <span class="seta-opcao">→</span>
+            </a>
+
+            <!-- RANKING -->
+            <a href="/ranking.html"
+               class="opcao-principal opcao-ranking">
+
+                <span class="icone-opcao">🏆</span>
+
+                <span class="texto-opcao">
+                    <strong>
+                        Ranking das fantasias
+                    </strong>
+
+                    <small>
+                        Descubra quem está liderando
+                        a votação da festa.
+                    </small>
+                </span>
+
+                <span class="seta-opcao">→</span>
+            </a>
+
+        </section>
+
+        <!-- RODAPÉ -->
+        <footer class="rodape">
+            <span>✦</span>
+            <p>31 DE OUTUBRO • HALLOWEEN DO WALTÃO</p>
+        </footer>
+
+    </div>
+</main>
+
+
+<!-- ACESSO NEGADO -->
+
+<section class="pagina pagina-acesso-negado"
+         id="pagina-acesso-negado"
+         hidden>
+
+    <div class="conteudo">
+
+        <div class="acesso-negado-card">
+
+            <div class="acesso-negado-icone">
+                👻
+            </div>
+
+            <p class="subtitulo">
+                OPA, TEM ALGUÉM TENTANDO ENTRAR...
+            </p>
+
+            <h1>
+                Espertinho<span>!</span>
+            </h1>
+
+            <p class="acesso-negado-texto">
+                Você não está logado! KKKKK
+            </p>
+
+            <p class="acesso-negado-descricao">
+                Achou que ia entrar na festa sem convite?
+                Faça login primeiro para participar!
+            </p>
+
+            <a href="/index.html"
+               class="botao-entrar botao-fazer-login">
+                Fazer login →
+            </a>
+
+        </div>
+
+        <footer class="rodape">
+            <span>✦</span>
+            <p>31 DE OUTUBRO • HALLOWEEN DO WALTÃO</p>
+        </footer>
+
+    </div>
+</section>
+
+</body>
+</html>

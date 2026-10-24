@@ -1,0 +1,154 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <meta name="theme-color" content="#0d0b13">
+
+    <title>Halloween do Waltão | Login</title>
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap"
+          rel="stylesheet">
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/js/login.js" defer></script>
+</head>
+
+<body>
+
+<main class="pagina">
+
+    <div class="conteudo">
+
+        <header class="cabecalho">
+
+            <div class="abobora">🎃</div>
+
+            <p class="subtitulo">
+                A NOITE MAIS ASSUSTADORA DO ANO
+            </p>
+
+            <h1>
+                HALLOWEEN
+                <span>DO WALTÃO</span>
+            </h1>
+
+            <p class="descricao">
+                Entre na festa e escolha sua fantasia favorita.
+            </p>
+
+        </header>
+
+        <section class="card-login">
+
+            <div class="card-cabecalho">
+
+                <p class="etiqueta">
+                    <span class="ponto"></span>
+                    ÁREA DOS CONVIDADOS
+                </p>
+
+                <h2>
+                    Bem-vindo de volta<span>.</span>
+                </h2>
+
+                <p class="instrucoes">
+                    Faça login para participar da votação.
+                </p>
+
+            </div>
+
+            <form id="form-login" novalidate>
+
+                <div class="campo">
+
+                    <label for="email">E-mail</label>
+
+                    <input
+                            id="email"
+                            type="email"
+                            placeholder="seuemail@exemplo.com"
+                            autocomplete="email"
+                            required
+                    >
+
+                </div>
+
+                <div class="campo">
+
+                    <label for="senha">Senha</label>
+
+                    <div class="campo-senha">
+
+                        <input
+                                id="senha"
+                                type="password"
+                                placeholder="Digite sua senha"
+                                autocomplete="current-password"
+                                required
+                        >
+
+                        <button
+                                type="button"
+                                id="mostrar-senha"
+                                aria-label="Mostrar senha"
+                        >
+                            Mostrar
+                        </button>
+
+                    </div>
+
+                </div>
+
+                <p
+                        id="mensagem-erro"
+                        class="mensagem-erro"
+                        role="alert"
+                        aria-live="polite"
+                        hidden
+                ></p>
+
+                <button
+                        type="submit"
+                        id="botao-entrar"
+                        class="botao-entrar"
+                >
+                    Entrar na festa →
+                </button>
+
+            </form>
+
+            <div class="cadastro">
+
+                <span>Não tem uma conta?</span>
+
+                <a href="/cadastro.html">
+                    Registre-se
+                </a>
+
+            </div>
+
+        </section>
+
+        <footer class="rodape">
+            <span>✦</span>
+            <p>31 DE OUTUBRO • HALLOWEEN DO WALTÃO</p>
+        </footer>
+
+    </div>
+
+</main>
+
+</body>
+</html>

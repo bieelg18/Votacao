@@ -1,0 +1,307 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <meta name="theme-color" content="#0d0b13">
+
+    <title>Halloween do Waltão | Minha conta</title>
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link
+            href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap"
+            rel="stylesheet">
+
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/minha-conta.css">
+
+    <script src="/js/minha-conta.js" defer></script>
+</head>
+
+<body>
+
+<main class="pagina pagina-minha-conta">
+
+    <div class="conteudo">
+
+        <!-- VOLTAR -->
+        <nav class="navegacao-conta">
+
+            <a href="/principal.html" class="botao-voltar">
+                <span>←</span>
+                Voltar
+            </a>
+
+            <span class="marca-conta">
+                🎃 MINHA CONTA
+            </span>
+
+        </nav>
+
+        <!-- CONTEÚDO AUTENTICADO -->
+        <div id="conteudo-conta" hidden>
+
+            <header class="cabecalho-conta">
+
+                <div class="icone-perfil">👻</div>
+
+                <p class="subtitulo">
+                    ÁREA DOS CONVIDADOS
+                </p>
+
+                <h1>
+                    Fala aí,
+                    <span id="nome-saudacao">convidado</span>!
+                </h1>
+
+                <p>Tomando muitos sustos? KKKKK</p>
+
+            </header>
+
+            <!-- DADOS DO USUÁRIO -->
+            <section class="card-conta">
+
+                <div class="card-conta-cabecalho">
+
+                    <p class="etiqueta">
+                        <span class="ponto"></span>
+                        SEU PERFIL
+                    </p>
+
+                    <h2>
+                        Seus dados<span>.</span>
+                    </h2>
+
+                    <p>
+                        Confira suas informações da festa.
+                    </p>
+
+                </div>
+
+                <div class="dados-conta">
+
+                    <!-- NOME -->
+                    <div class="dado-conta">
+
+                        <span class="dado-icone">👤</span>
+
+                        <div>
+                            <span class="dado-rotulo">NOME</span>
+
+                            <strong id="nome-usuario">
+                                Carregando...
+                            </strong>
+                        </div>
+
+                    </div>
+
+                    <!-- E-MAIL -->
+                    <div class="dado-conta">
+
+                        <span class="dado-icone">✉️</span>
+
+                        <div>
+                            <span class="dado-rotulo">E-MAIL</span>
+
+                            <strong id="email-usuario">
+                                Carregando...
+                            </strong>
+                        </div>
+
+                    </div>
+
+                    <!-- VERIFICAÇÃO -->
+                    <div class="dado-conta">
+
+                        <span class="dado-icone">🛡️</span>
+
+                        <div>
+                            <span class="dado-rotulo">
+                                VERIFICAÇÃO
+                            </span>
+
+                            <strong id="status-verificacao">
+                                Carregando...
+                            </strong>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- EXCLUIR CONTA -->
+            <section class="area-excluir-conta">
+
+                <p>
+                    Quer deixar a festa?
+                </p>
+
+                <button
+                        type="button"
+                        id="botao-excluir-conta"
+                        class="botao-excluir-conta">
+
+                    <span>🗑️</span>
+                    Excluir minha conta
+
+                </button>
+
+            </section>
+
+        </div>
+
+        <!-- ACESSO NEGADO -->
+        <section
+                id="acesso-negado-conta"
+                class="acesso-negado-conta"
+                hidden>
+
+            <div class="icone-perfil">👻</div>
+
+            <h2>
+                Espertinho<span>!</span>
+            </h2>
+
+            <p>
+                Você precisa fazer login
+                para acessar sua conta!
+            </p>
+
+            <a
+                    href="/index.html"
+                    class="botao-entrar botao-login-conta">
+
+                Fazer login →
+
+            </a>
+
+        </section>
+
+        <!-- ERRO DE CONEXÃO -->
+        <section
+                id="erro-conta"
+                class="acesso-negado-conta"
+                hidden>
+
+            <div class="icone-perfil">🕸️</div>
+
+            <h2>
+                Ops<span>!</span>
+            </h2>
+
+            <p>
+                Não conseguimos carregar seus dados.
+                Tente novamente.
+            </p>
+
+            <button
+                    type="button"
+                    class="botao-entrar botao-login-conta"
+                    id="tentar-novamente">
+
+                Tentar novamente →
+
+            </button>
+
+        </section>
+
+        <!-- RODAPÉ -->
+        <footer class="rodape">
+
+            <span>✦</span>
+
+            <p>
+                31 DE OUTUBRO • HALLOWEEN DO WALTÃO
+            </p>
+
+        </footer>
+
+    </div>
+
+</main>
+
+<!-- MODAL DE EXCLUSÃO -->
+<div
+        id="modal-exclusao"
+        class="modal-exclusao"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="titulo-modal-exclusao"
+        aria-describedby="descricao-modal-exclusao"
+        hidden>
+
+    <div class="modal-exclusao-conteudo">
+
+        <div class="modal-exclusao-icone">
+            💀
+        </div>
+
+        <p class="modal-exclusao-etiqueta">
+            TEM CERTEZA DISSO?
+        </p>
+
+        <h2 id="titulo-modal-exclusao">
+            Vai abandonar a festa<span>?</span>
+        </h2>
+
+        <p id="descricao-modal-exclusao">
+            Se você excluir sua conta,
+            seus dados serão removidos e
+            <strong>
+                seu voto também será excluído
+            </strong>
+            da votação.
+        </p>
+
+        <p class="modal-exclusao-aviso">
+            ⚠️ Essa ação não pode ser desfeita!
+        </p>
+
+        <p
+                id="erro-exclusao"
+                class="mensagem-erro"
+                role="alert"
+                aria-live="polite"
+                hidden>
+        </p>
+
+        <div class="modal-exclusao-acoes">
+
+            <button
+                    type="button"
+                    id="cancelar-exclusao"
+                    class="botao-cancelar-exclusao">
+
+                Não, quero ficar!
+
+            </button>
+
+            <button
+                    type="button"
+                    id="confirmar-exclusao"
+                    class="botao-confirmar-exclusao">
+
+                Sim, excluir conta
+
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>
