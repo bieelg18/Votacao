@@ -64,6 +64,30 @@ public class SecurityConfig {
                 )
 
                 .authorizeHttpRequests(auth -> auth
+
+                        //Arquivos públicos do frontend
+                        .requestMatchers(
+                                "/",
+                                "/index.html",
+                                "/cadastro.html",
+                                "/verificar-email.html",
+                                "/principal.html",
+                                "/minha-conta.html",
+                                "/ranking.html",
+                                "/votacao.html",
+                                "/painel-admin.html",
+                                "/cadastrar-participante.html",
+                                "/editar-participante.html",
+                                "/excluir-participante.html",
+                                "/listar-usuarios.html",
+                                "/css/**",
+                                "/js/**",
+                                "/img/**"
+                        )
+                        .permitAll()
+
+
+
                         //Rotas que qualquer um pode acessar
                         .requestMatchers(HttpMethod.POST, "/usuario", "/usuario/confirmar-email",
                                 "/usuario/reenviar-codigo", "/auth/login")
@@ -94,6 +118,8 @@ public class SecurityConfig {
 
                         .requestMatchers(HttpMethod.DELETE, "/usuario/admin/**", "/participante/admin/**")
                         .hasRole("ADMIN")
+
+                        .anyRequest().denyAll()
                 )
 
                 .addFilterBefore(
